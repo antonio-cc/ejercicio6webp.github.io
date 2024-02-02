@@ -11,15 +11,35 @@
             justify-content: space-around;
         }
         .image-container {
-            width: 48%; 
+            width: 48%;
             margin: 1%;
             position: relative;
             overflow: hidden;
         }
         img {
-            width: 400px;
+            width: 100%;
             height: auto;
             object-fit: cover;
+        }
+        /* Responsividad */
+        @media screen and (max-width: 600px) {
+            .image-container {
+                width: 100%;
+            }
+        }
+        /* Efectos Visuales Adicionales */
+        .image-container:nth-child(odd) img {
+            filter: sepia(50%);
+        }
+        .image-container:nth-child(even) img {
+            filter: grayscale(70%);
+        }
+        .image-container:nth-child(3) img {
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+        }
+        .image-container:nth-child(4) img {
+            border: 10px solid transparent;
+            border-image: url('border-image.png') 30 repeat;
         }
     </style>
 </head>
@@ -32,35 +52,47 @@
     <img src="580b585b2edbce24c47b2d00.webp" alt="Descripción de la imagen 2">
 </div>
 <div class="image-container">
-    <img src="hombre-tiro-completo-montando-motocicleta-al-aire-libre.webp" alt="Descripción de la imagen 2">
+    <img src="hombre-tiro-completo-montando-motocicleta-al-aire-libre.webp" alt="Descripción de la imagen 3">
 </div>
 <div class="image-container">
-    <img src="motor-rojo-bicicleta-carretera_114579-5071.webp" alt="Descripción de la imagen 2">
+    <img src="motor-rojo-bicicleta-carretera_114579-5071.webp" alt="Descripción de la imagen 4">
 </div>
 <div class="image-container">
-    <img src="persona-que-conduce-motocicleta-potente-alta-velocidad.webp" alt="Descripción de la imagen 2">
+    <img src="persona-que-conduce-motocicleta-potente-alta-velocidad.webp" alt="Descripción de la imagen 5">
 </div>
 <div class="image-container">
-    <img src="persona-que-conduce-motocicleta-potente-alta-velocidad_23-2150704737.webp" alt="Descripción de la imagen 2">
+    <img src="persona-que-conduce-motocicleta-potente-alta-velocidad_23-2150704737.webp" alt="Descripción de la imagen 6">
 </div>
 <div class="image-container">
-    <img src="plano-completo-adulto-montando-motocicleta-genial_23-2150868312.webp" alt="Descripción de la imagen 2">
+    <img src="plano-completo-adulto-montando-motocicleta-genial_23-2150868312.webp" alt="Descripción de la imagen 7">
 </div>
 <div class="image-container">
-    <img src="plano-completo-adulto-montando-motocicleta-genial_23-2150868326.webp" alt="Descripción de la imagen 2">
+    <img src="plano-completo-adulto-montando-motocicleta-genial_23-2150868326.webp" alt="Descripción de la imagen 8">
 </div>
 <div class="image-container">
-    <img src="plano-completo-adulto-montando-motocicleta-genial_23-2150868370 (1).webp" alt="Descripción de la imagen 2">
+    <img src="plano-completo-adulto-montando-motocicleta-genial_23-2150868370 (1).webp" alt="Descripción de la imagen 9">
 </div>
 <div class="image-container">
-    <img src="plano-completo-adulto-motocicleta-genial.webp" alt="Descripción de la imagen 2">
+    <img src="plano-completo-adulto-motocicleta-genial.webp" alt="Descripción de la imagen 10">
 </div>
 <div class="image-container">
-    <img src="tiro-completo-adulto-equipo-montando-motocicleta_23-2150781514.webp" alt="Descripción de la imagen 2">
+    <img src="tiro-completo-adulto-equipo-montando-motocicleta_23-2150781514.webp" alt="Descripción de la imagen 11">
 </div>
 <div class="image-container">
-    <img src="vista-motocicleta-fresca-poderosa_23-2150704867.webp" alt="Descripción de la imagen 2">
+    <img src="vista-motocicleta-fresca-poderosa_23-2150704867.webp" alt="Descripción de la imagen 12">
 </div>
+
+<script>
+    document.querySelectorAll('.image-container').forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.querySelector('img').style.opacity = '0.8';
+        });
+
+        item.addEventListener('mouseout', () => {
+            item.querySelector('img').style.opacity = '1';
+        });
+    });
+</script>
 
 </body>
 </html>
